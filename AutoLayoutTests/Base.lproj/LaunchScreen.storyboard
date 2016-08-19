@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pmlbrito @ 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-Ae-kvY">
+                                <rect key="frame" x="237" y="559" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Layout Constraints Tests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-6q-uvg">
+                                <rect key="frame" x="40" y="95" width="520" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tNE-6q-uvg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1jH-P5-iYX"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="a9f-Ae-kvY" secondAttribute="bottom" constant="20" id="9ny-Rh-XTO"/>
+                            <constraint firstItem="tNE-6q-uvg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="HXw-S0-Gke"/>
+                            <constraint firstItem="a9f-Ae-kvY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XK3-qH-kL9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tNE-6q-uvg" secondAttribute="trailing" constant="20" id="fc2-hf-PWl"/>
+                            <constraint firstItem="tNE-6q-uvg" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="75" id="nEO-QB-Ud8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

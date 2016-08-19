@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		183729442620FF4FAA50E363 /* Pods_AutoLayoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121EF38DD1075168E975D08F /* Pods_AutoLayoutTests.framework */; };
 		42EE28C21D5F5B9D005F1186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE28C11D5F5B9D005F1186 /* AppDelegate.swift */; };
-		42EE28C41D5F5B9D005F1186 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE28C31D5F5B9D005F1186 /* RootViewController.swift */; };
-		42EE28C61D5F5B9D005F1186 /* NSLayoutConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE28C51D5F5B9D005F1186 /* NSLayoutConstraintsViewController.swift */; };
-		42EE28C81D5F5B9D005F1186 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE28C71D5F5B9D005F1186 /* ModelController.swift */; };
 		42EE28CB1D5F5B9D005F1186 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EE28C91D5F5B9D005F1186 /* Main.storyboard */; };
 		42EE28CD1D5F5B9D005F1186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EE28CC1D5F5B9D005F1186 /* Assets.xcassets */; };
 		42EE28D01D5F5B9D005F1186 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EE28CE1D5F5B9D005F1186 /* LaunchScreen.storyboard */; };
-		42EE28D81D5F808D005F1186 /* PureLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE28D71D5F808D005F1186 /* PureLayoutViewController.swift */; };
+		42F219091D661BA400ABF75B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F219081D661BA400ABF75B /* ModelController.swift */; };
+		42F2190B1D661BBC00ABF75B /* ContentPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2190A1D661BBC00ABF75B /* ContentPageModel.swift */; };
+		42F219111D675C1F00ABF75B /* LayoutBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2190D1D675C1F00ABF75B /* LayoutBaseViewController.swift */; };
+		42F219121D675C1F00ABF75B /* NSLayoutConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2190E1D675C1F00ABF75B /* NSLayoutConstraintsViewController.swift */; };
+		42F219131D675C1F00ABF75B /* PureLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2190F1D675C1F00ABF75B /* PureLayoutViewController.swift */; };
+		42F219141D675C1F00ABF75B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F219101D675C1F00ABF75B /* RootViewController.swift */; };
+		42F219161D675C6500ABF75B /* SnapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F219151D675C6500ABF75B /* SnapKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,14 +26,17 @@
 		2CE19C63404A5D9C1BFB22E6 /* Pods-AutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayoutTests/Pods-AutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42EE28BE1D5F5B9D005F1186 /* AutoLayoutTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EE28C11D5F5B9D005F1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42EE28C31D5F5B9D005F1186 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		42EE28C51D5F5B9D005F1186 /* NSLayoutConstraintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsViewController.swift; sourceTree = "<group>"; };
-		42EE28C71D5F5B9D005F1186 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		42EE28CA1D5F5B9D005F1186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42EE28CC1D5F5B9D005F1186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42EE28CF1D5F5B9D005F1186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42EE28D11D5F5B9D005F1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42EE28D71D5F808D005F1186 /* PureLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureLayoutViewController.swift; sourceTree = "<group>"; };
+		42F219081D661BA400ABF75B /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		42F2190A1D661BBC00ABF75B /* ContentPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPageModel.swift; sourceTree = "<group>"; };
+		42F2190D1D675C1F00ABF75B /* LayoutBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutBaseViewController.swift; sourceTree = "<group>"; };
+		42F2190E1D675C1F00ABF75B /* NSLayoutConstraintsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsViewController.swift; sourceTree = "<group>"; };
+		42F2190F1D675C1F00ABF75B /* PureLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureLayoutViewController.swift; sourceTree = "<group>"; };
+		42F219101D675C1F00ABF75B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		42F219151D675C6500ABF75B /* SnapKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKitViewController.swift; sourceTree = "<group>"; };
 		D484FC11B18B2C332F13F0C2 /* Pods-AutoLayoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayoutTests/Pods-AutoLayoutTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,17 +73,36 @@
 		42EE28C01D5F5B9D005F1186 /* AutoLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				42EE28C11D5F5B9D005F1186 /* AppDelegate.swift */,
-				42EE28C31D5F5B9D005F1186 /* RootViewController.swift */,
-				42EE28C51D5F5B9D005F1186 /* NSLayoutConstraintsViewController.swift */,
-				42EE28C71D5F5B9D005F1186 /* ModelController.swift */,
+				42F2190C1D675BC300ABF75B /* ViewControllers */,
+				42F219071D661B7500ABF75B /* Model */,
 				42EE28C91D5F5B9D005F1186 /* Main.storyboard */,
+				42EE28C11D5F5B9D005F1186 /* AppDelegate.swift */,
 				42EE28CC1D5F5B9D005F1186 /* Assets.xcassets */,
 				42EE28CE1D5F5B9D005F1186 /* LaunchScreen.storyboard */,
 				42EE28D11D5F5B9D005F1186 /* Info.plist */,
-				42EE28D71D5F808D005F1186 /* PureLayoutViewController.swift */,
 			);
 			path = AutoLayoutTests;
+			sourceTree = "<group>";
+		};
+		42F219071D661B7500ABF75B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42F219081D661BA400ABF75B /* ModelController.swift */,
+				42F2190A1D661BBC00ABF75B /* ContentPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42F2190C1D675BC300ABF75B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				42F2190D1D675C1F00ABF75B /* LayoutBaseViewController.swift */,
+				42F2190E1D675C1F00ABF75B /* NSLayoutConstraintsViewController.swift */,
+				42F2190F1D675C1F00ABF75B /* PureLayoutViewController.swift */,
+				42F219101D675C1F00ABF75B /* RootViewController.swift */,
+				42F219151D675C6500ABF75B /* SnapKitViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		934AC730FF8701940E9EE910 /* Frameworks */ = {
@@ -219,11 +244,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42EE28D81D5F808D005F1186 /* PureLayoutViewController.swift in Sources */,
-				42EE28C41D5F5B9D005F1186 /* RootViewController.swift in Sources */,
-				42EE28C81D5F5B9D005F1186 /* ModelController.swift in Sources */,
-				42EE28C61D5F5B9D005F1186 /* NSLayoutConstraintsViewController.swift in Sources */,
+				42F219121D675C1F00ABF75B /* NSLayoutConstraintsViewController.swift in Sources */,
+				42F2190B1D661BBC00ABF75B /* ContentPageModel.swift in Sources */,
+				42F219111D675C1F00ABF75B /* LayoutBaseViewController.swift in Sources */,
+				42F219141D675C1F00ABF75B /* RootViewController.swift in Sources */,
+				42F219091D661BA400ABF75B /* ModelController.swift in Sources */,
+				42F219131D675C1F00ABF75B /* PureLayoutViewController.swift in Sources */,
 				42EE28C21D5F5B9D005F1186 /* AppDelegate.swift in Sources */,
+				42F219161D675C6500ABF75B /* SnapKitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

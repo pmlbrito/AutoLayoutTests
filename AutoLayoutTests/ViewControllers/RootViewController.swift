@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol PageControlDelegate {
+  
+  func setNumberOfPages(numPages: Int);
+  
+  func setCurrentPageNumber(currPage: Int);
+
+}
+
 class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
   var pageViewController: UIPageViewController?
@@ -22,11 +30,15 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     self.pageViewController = UIPageViewController(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: nil)
     self.pageViewController!.delegate = self
 
-    let startingViewController: NSLayoutConstraintsViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
+    let startingViewController: LayoutBaseViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
     let viewControllers = [startingViewController]
     self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: {done in })
 
     self.pageViewController!.dataSource = self.modelController
+    self.modelController.pageDelegate = self;
+    
+    self.pageControl.pageIndicatorTintColor = UIColor.blackColor()
+    self.pageControl.currentPageIndicatorTintColor = UIColor.redColor()
 
     self.addChildViewController(self.pageViewController!)
     self.view.addSubview(self.pageViewController!.view)
@@ -71,7 +83,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     }
 
     // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
-    let currentViewController = self.pageViewController!.viewControllers![0] as! NSLayoutConstraintsViewController
+    let currentViewController = self.pageViewController!.viewControllers![0] as! LayoutBaseViewController
     var viewControllers: [UIViewController]
 
     let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
@@ -88,5 +100,15 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
   }
 
 
+}
+
+extension RootViewController: PageControlDelegate {
+  func setNumberOfPages(numPages: Int){
+    self.pageControl.numberOfPages = numPages;
+  }
+  
+  func setCurrentPageNumber(currPage: Int){
+    self.pageControl.currentPage = currPage;
+  }
 }
 
