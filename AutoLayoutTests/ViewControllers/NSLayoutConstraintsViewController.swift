@@ -20,8 +20,7 @@ class NSLayoutConstraintsViewController: LayoutBaseViewController {
   
   //MARK: - Helper Methods
   
-  func setupViewLayout()
-  {
+  func setupViewLayout() {
     let viewHeights = CGFloat(100.0);
     let viewOffset = CGFloat(10.0);
    

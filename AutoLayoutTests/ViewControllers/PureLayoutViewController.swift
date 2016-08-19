@@ -24,8 +24,7 @@ class PureLayoutViewController: LayoutBaseViewController {
     self.setupViewLayout();
   }
   
-  func setupViewLayout()
-  {
+  func setupViewLayout() {
     if (!didSetupConstraints) {
       bottomContainer = UIView.newAutoLayoutView();
       self.view.addSubview(bottomContainer)
