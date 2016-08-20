@@ -13,10 +13,27 @@ class NSLayoutConstraintsViewController: LayoutBaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    self.setupViewLayout();    
+    self.setupViewLayout();
   }
+  
+  //View placement:
+  //Bottom Green View has:
+  //- width of 90% of the screen width -> widthConstraint3
+  //- fixed height of 100pt -> heightConstraint3
+  //- view center matching the horizontal center of the screen -> horizontalConstraint3
+  //- top matching the vertical center of the screen with 10pt offset -> verticalConstraint3
+  
+  //Top Right Red View has:
+  //- width of 40% of the screen width -> widthConstraint
+  //- fixed height of 100pt -> heightConstraint
+  //- right margin matching bottom green view right margin -> horizontalConstraint
+  //- bottom matching the vertical center of the screen with 10pt offset -> verticalConstraint
+  
+  //Top Left Blue View has:
+  //- width of 40% of the screen width -> widthConstraint2
+  //- fixed height of 100pt -> heightConstraint2
+  //- left margin matching bottom green view left margin -> horizontalConstraint2
+  //- bottom matching the vertical center of the screen with 10pt offset -> verticalConstraint2
   
   //MARK: - Helper Methods
   

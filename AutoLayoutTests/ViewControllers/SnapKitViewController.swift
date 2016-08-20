@@ -19,14 +19,33 @@ class SnapKitViewController: LayoutBaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     self.setupViewLayout();
   }
+  
+  //View placement:
+  //Bottom Green View has:
+  //- width of 90% of the screen width -> widthConstraint3
+  //- fixed height of 100pt -> heightConstraint3
+  //- view center matching the horizontal center of the screen -> horizontalConstraint3
+  //- top matching the vertical center of the screen with 10pt offset -> verticalConstraint3
+  
+  //Top Right Red View has:
+  //- width of 40% of the screen width -> widthConstraint
+  //- fixed height of 100pt -> heightConstraint
+  //- right margin matching bottom green view right margin -> horizontalConstraint
+  //- bottom matching the vertical center of the screen with 10pt offset -> verticalConstraint
+  
+  //Top Left Blue View has:
+  //- width of 40% of the screen width -> widthConstraint2
+  //- fixed height of 100pt -> heightConstraint2
+  //- left margin matching bottom green view left margin -> horizontalConstraint2
+  //- bottom matching the vertical center of the screen with 10pt offset -> verticalConstraint2
+  
+  //MARK: - Helper Methods
   
   func setupViewLayout() {
     let viewHeights = CGFloat(100.0);
     let viewOffset = CGFloat(10.0);
-    let viewInset = CGFloat(20.0);
     
     self.view.addSubview(self.bottomContainer);
     self.bottomContainer.snp_makeConstraints { make in
@@ -50,7 +69,7 @@ class SnapKitViewController: LayoutBaseViewController {
     self.topRightView.snp_makeConstraints { make in
       make.height.equalTo(viewHeights) //heightConstraint
       make.width.equalTo(self.view).multipliedBy(0.4) //widthConstraint
-      make.right.equalTo(self.view).inset(viewInset) //horizontalConstraint
+      make.right.equalTo(self.bottomView.snp_right) //horizontalConstraint
       make.bottom.equalTo(self.bottomContainer.snp_top).inset(-viewOffset) //verticalConstraint
     }
     
@@ -59,7 +78,7 @@ class SnapKitViewController: LayoutBaseViewController {
     self.topLeftView.snp_makeConstraints { make in
       make.height.equalTo(viewHeights) //heightConstraint2
       make.width.equalTo(self.view).multipliedBy(0.4) //widthConstraint2
-      make.left.equalTo(self.view).inset(viewInset) //horizontalConstraint2
+      make.left.equalTo(self.bottomView.snp_left) //horizontalConstraint2
       make.bottom.equalTo(self.bottomContainer.snp_top).inset(-viewOffset) //verticalConstraint2
     }
     

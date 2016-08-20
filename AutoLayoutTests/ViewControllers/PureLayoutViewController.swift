@@ -20,9 +20,29 @@ class PureLayoutViewController: LayoutBaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     self.setupViewLayout();
   }
+  
+  //View placement:
+  //Bottom Green View has:
+  //- width of 90% of the screen width -> widthConstraint3
+  //- fixed height of 100pt -> heightConstraint3
+  //- view center matching the horizontal center of the screen -> horizontalConstraint3
+  //- top matching the vertical center of the screen with 10pt offset -> verticalConstraint3
+  
+  //Top Right Red View has:
+  //- width of 40% of the screen width -> widthConstraint
+  //- fixed height of 100pt -> heightConstraint
+  //- right margin matching bottom green view right margin -> horizontalConstraint
+  //- bottom matching the vertical center of the screen with 10pt offset -> verticalConstraint
+  
+  //Top Left Blue View has:
+  //- width of 40% of the screen width -> widthConstraint2
+  //- fixed height of 100pt -> heightConstraint2
+  //- left margin matching bottom green view left margin -> horizontalConstraint2
+  //- bottom matching the vertical center of the screen with 10pt offset -> verticalConstraint2
+  
+  //MARK: - Helper Methods
   
   func setupViewLayout() {
     if (!didSetupConstraints) {
@@ -49,7 +69,6 @@ class PureLayoutViewController: LayoutBaseViewController {
 
     let viewHeights = CGFloat(100.0);
     let viewOffset = CGFloat(10.0);
-    let viewInset = CGFloat(20.0);
     
     if (!didSetupConstraints) {
       //extra view to help setup the layout
@@ -67,13 +86,13 @@ class PureLayoutViewController: LayoutBaseViewController {
       
       topRightView.autoSetDimension(.Height, toSize: viewHeights); //heightConstraint
       topRightView.autoMatchDimension(.Width, toDimension: .Width, ofView: self.view, withMultiplier: 0.4); //widthConstraint
-      topRightView.autoPinEdgeToSuperviewEdge(.Trailing, withInset: viewInset); //horizontalConstraint
+      topRightView.autoConstrainAttribute(.Right, toAttribute: .Right, ofView: self.bottomView); //horizontalConstraint
       topRightView.autoPinEdge(.Bottom, toEdge: .Top, ofView: self.bottomContainer, withOffset: -viewOffset); //verticalConstraint
       
       
       topLeftView.autoSetDimension(.Height, toSize: viewHeights); //heightConstraint2
       topLeftView.autoMatchDimension(.Width, toDimension: .Width, ofView: self.view, withMultiplier: 0.4); //widthConstraint2
-      topLeftView.autoPinEdgeToSuperviewEdge(.Leading, withInset: viewInset); //horizontalConstraint2
+      topLeftView.autoConstrainAttribute(.Left, toAttribute: .Left, ofView: self.bottomView); //horizontalConstraint2
       topLeftView.autoPinEdge(.Bottom, toEdge: .Top, ofView: self.bottomContainer, withOffset: -viewOffset); //verticalConstraint2
       
       didSetupConstraints = true;

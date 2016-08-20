@@ -9,7 +9,7 @@
 import UIKit
 
 /*
- A controller object that manages a simple model -- a collection of month names.
+ A controller object that manages a simple model.
  
  The controller serves as the data source for the page view controller; it therefore implements pageViewController:viewControllerBeforeViewController: and pageViewController:viewControllerAfterViewController:.
  It also implements a custom method, viewControllerAtIndex: which is useful in the implementation of the data source methods, and in the initial configuration of the application.
@@ -21,17 +21,11 @@ import UIKit
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
   var pageData: [ContentPageModel] = []
-//  var pageData: [String] = []
-  
   var pageDelegate: PageControlDelegate!;
   
   override init() {
       super.init()
     // Create the data model.
-//    let dateFormatter = NSDateFormatter()
-//    pageData = dateFormatter.monthSymbols
-//    pageData = ["NSAutoLayout Constraints View Controller","PureLayout Constraints View Controller","SnapKit Constraints View Controller"];
-    
     pageData = [ContentPageModel(headerTitle: "NSAutoLayout Constraints View Controller", viewController: LayoutViewControllerTypes.NSLayoutConstraints),ContentPageModel(headerTitle: "PureLayout Constraints View Controller", viewController: LayoutViewControllerTypes.PureLayout),ContentPageModel(headerTitle: "SnapKit Constraints View Controller", viewController: LayoutViewControllerTypes.SnapKit)];
     
     self.pageDelegate?.setNumberOfPages(self.pageData.count);
@@ -44,8 +38,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
     // Create a new view controller and pass suitable data.
-//    let dataViewController = storyboard.instantiateViewControllerWithIdentifier("NSLayoutConstraintsViewController") as! NSLayoutConstraintsViewController
-    
     let dataViewController = self.getViewControllerInstanceForType(storyboard, type: (self.pageData[index]).viewController)
     dataViewController.dataObject = self.pageData[index]
     self.pageDelegate?.setCurrentPageNumber(index);
@@ -55,7 +47,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
   func indexOfViewController(viewController: LayoutBaseViewController) -> Int {
     // Return the index of the given data view controller.
     // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-//    return pageData.indexOf(viewController.dataObject) ?? NSNotFound
     var index: Int = 0;
     for model in self.pageData {
       if (model.headerTitle.caseInsensitiveCompare(viewController.dataObject.headerTitle) == NSComparisonResult.OrderedSame){
@@ -107,12 +98,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
       return dataViewController;
     
     }
-    
-    
-    
-    
-  
   }
-  
 }
 
