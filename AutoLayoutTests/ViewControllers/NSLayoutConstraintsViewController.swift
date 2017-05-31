@@ -43,59 +43,59 @@ class NSLayoutConstraintsViewController: LayoutBaseViewController {
    
     
     let bottomView = UIView()
-    bottomView.backgroundColor = UIColor.greenColor()
+    bottomView.backgroundColor = UIColor.green
     bottomView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(bottomView)
     
-    let widthConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Width, multiplier: 0.9, constant: 0)
+    let widthConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.width, multiplier: 0.9, constant: 0)
     view.addConstraint(widthConstraint3)
     
-    let heightConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: viewHeights)
+    let heightConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: viewHeights)
     view.addConstraint(heightConstraint3)
     
     
-    let horizontalConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+    let horizontalConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
     view.addConstraint(horizontalConstraint3)
     
     
-    let verticalConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: viewOffset)
+    let verticalConstraint3 = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: viewOffset)
     view.addConstraint(verticalConstraint3)
     
     
     let topRightView = UIView()
-    topRightView.backgroundColor = UIColor.redColor()
+    topRightView.backgroundColor = UIColor.red
     topRightView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(topRightView)
     
-    let horizontalConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.RightMargin, relatedBy: NSLayoutRelation.Equal, toItem: bottomView, attribute: NSLayoutAttribute.RightMargin, multiplier: 1, constant: 0)
+    let horizontalConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.rightMargin, relatedBy: NSLayoutRelation.equal, toItem: bottomView, attribute: NSLayoutAttribute.rightMargin, multiplier: 1, constant: 0)
     view.addConstraint(horizontalConstraint)
     
-    let verticalConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -viewOffset)
+    let verticalConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: -viewOffset)
     view.addConstraint(verticalConstraint)
     
-    let widthConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Width, multiplier: 0.4, constant: 0)
+    let widthConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.width, multiplier: 0.4, constant: 0)
     view.addConstraint(widthConstraint)
     
-    let heightConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: viewHeights)
+    let heightConstraint = NSLayoutConstraint(item: topRightView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: viewHeights)
     view.addConstraint(heightConstraint)
     
     let topLeftView = UIView()
-    topLeftView.backgroundColor = UIColor.blueColor()
+    topLeftView.backgroundColor = UIColor.blue
     topLeftView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(topLeftView)
     
     
-    let horizontalConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.LeftMargin, relatedBy: NSLayoutRelation.Equal, toItem: bottomView, attribute: NSLayoutAttribute.LeftMargin, multiplier: 1, constant: 0)
+    let horizontalConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.leftMargin, relatedBy: NSLayoutRelation.equal, toItem: bottomView, attribute: NSLayoutAttribute.leftMargin, multiplier: 1, constant: 0)
     view.addConstraint(horizontalConstraint2)
     
-    let verticalConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -viewOffset)
+    let verticalConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: -viewOffset)
     view.addConstraint(verticalConstraint2)
     
     
-    let widthConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Width, multiplier: 0.4, constant: 0)
+    let widthConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.width, multiplier: 0.4, constant: 0)
     view.addConstraint(widthConstraint2)
     
-    let heightConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: viewHeights)
+    let heightConstraint2 = NSLayoutConstraint(item: topLeftView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: viewHeights)
     view.addConstraint(heightConstraint2)
 
   }

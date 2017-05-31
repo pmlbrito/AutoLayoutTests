@@ -31,7 +31,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     self.pageDelegate?.setNumberOfPages(self.pageData.count);
   }
 
-  func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> LayoutBaseViewController? {
+  func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> LayoutBaseViewController? {
     // Return the data view controller for the given index.
     if (self.pageData.count == 0) || (index >= self.pageData.count) {
         return nil
@@ -44,12 +44,12 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     return dataViewController
   }
 
-  func indexOfViewController(viewController: LayoutBaseViewController) -> Int {
+  func indexOfViewController(_ viewController: LayoutBaseViewController) -> Int {
     // Return the index of the given data view controller.
     // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
     var index: Int = 0;
     for model in self.pageData {
-      if (model.headerTitle.caseInsensitiveCompare(viewController.dataObject.headerTitle) == NSComparisonResult.OrderedSame){
+      if (model.headerTitle.caseInsensitiveCompare(viewController.dataObject.headerTitle) == ComparisonResult.orderedSame){
         return index;
       }
       index = index + 1 ;
@@ -59,7 +59,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
   // MARK: - Page View Controller Data Source
 
-  func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
       var index = self.indexOfViewController(viewController as! LayoutBaseViewController)
       if (index == 0) || (index == NSNotFound) {
           return nil
@@ -69,7 +69,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
       return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
   }
 
-  func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
       var index = self.indexOfViewController(viewController as! LayoutBaseViewController)
       if index == NSNotFound {
           return nil
@@ -84,17 +84,17 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
   
   //MARK: - Helper Methods
   
-  func getViewControllerInstanceForType(storyboard: UIStoryboard, type: LayoutViewControllerTypes) -> LayoutBaseViewController {
+  func getViewControllerInstanceForType(_ storyboard: UIStoryboard, type: LayoutViewControllerTypes) -> LayoutBaseViewController {
   
     switch type{
     case .NSLayoutConstraints:
-      let dataViewController = storyboard.instantiateViewControllerWithIdentifier("NSLayoutConstraintsViewController") as! NSLayoutConstraintsViewController
+      let dataViewController = storyboard.instantiateViewController(withIdentifier: "NSLayoutConstraintsViewController") as! NSLayoutConstraintsViewController
       return dataViewController;
     case .PureLayout:
-      let dataViewController = storyboard.instantiateViewControllerWithIdentifier("PureLayoutViewController") as! PureLayoutViewController
+      let dataViewController = storyboard.instantiateViewController(withIdentifier: "PureLayoutViewController") as! PureLayoutViewController
       return dataViewController;
     case .SnapKit:
-      let dataViewController = storyboard.instantiateViewControllerWithIdentifier("SnapKitViewController") as! SnapKitViewController
+      let dataViewController = storyboard.instantiateViewController(withIdentifier: "SnapKitViewController") as! SnapKitViewController
       return dataViewController;
     
     }

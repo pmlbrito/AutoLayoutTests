@@ -55,7 +55,7 @@ class SnapKitViewController: LayoutBaseViewController {
       make.bottom.equalTo(self.view);
     }
     
-    bottomView.backgroundColor = UIColor.greenColor()
+    bottomView.backgroundColor = UIColor.green
     self.bottomContainer.addSubview(self.bottomView);
     self.bottomView.snp_makeConstraints { make in
       make.height.equalTo(viewHeights) //heightConstraint3
@@ -64,7 +64,7 @@ class SnapKitViewController: LayoutBaseViewController {
       make.top.equalTo(self.bottomContainer).offset(viewOffset)  //verticalConstraint3 - using container view to help
     }
     
-    topRightView.backgroundColor = UIColor.redColor()
+    topRightView.backgroundColor = UIColor.red
     self.view.addSubview(self.topRightView)
     self.topRightView.snp_makeConstraints { make in
       make.height.equalTo(viewHeights) //heightConstraint
@@ -73,7 +73,7 @@ class SnapKitViewController: LayoutBaseViewController {
       make.bottom.equalTo(self.bottomContainer.snp_top).inset(-viewOffset) //verticalConstraint
     }
     
-    topLeftView.backgroundColor = UIColor.blueColor()
+    topLeftView.backgroundColor = UIColor.blue
     self.view.addSubview(self.topLeftView)
     self.topLeftView.snp_makeConstraints { make in
       make.height.equalTo(viewHeights) //heightConstraint2

@@ -46,19 +46,19 @@ class PureLayoutViewController: LayoutBaseViewController {
   
   func setupViewLayout() {
     if (!didSetupConstraints) {
-      bottomContainer = UIView.newAutoLayoutView();
+      bottomContainer = UIView.newAutoLayout();
       self.view.addSubview(bottomContainer)
       
-      bottomView = UIView.newAutoLayoutView();
-      bottomView.backgroundColor = UIColor.greenColor()
+      bottomView = UIView.newAutoLayout();
+      bottomView.backgroundColor = UIColor.green
       self.bottomContainer.addSubview(bottomView)
       
-      topRightView = UIView.newAutoLayoutView();
-      topRightView.backgroundColor = UIColor.redColor()
+      topRightView = UIView.newAutoLayout();
+      topRightView.backgroundColor = UIColor.red
       self.view.addSubview(topRightView)
       
-      topLeftView = UIView.newAutoLayoutView();
-      topLeftView.backgroundColor = UIColor.blueColor()
+      topLeftView = UIView.newAutoLayout();
+      topLeftView.backgroundColor = UIColor.blue
       self.view.addSubview(topLeftView)
     }
     
@@ -72,28 +72,28 @@ class PureLayoutViewController: LayoutBaseViewController {
     
     if (!didSetupConstraints) {
       //extra view to help setup the layout
-      bottomContainer.autoMatchDimension(.Height, toDimension: .Height, ofView: self.view, withMultiplier: 0.5);
-      bottomContainer.autoPinEdgeToSuperviewEdge(.Leading);
-      bottomContainer.autoPinEdgeToSuperviewEdge(.Trailing);
-      bottomContainer.autoPinEdgeToSuperviewEdge(.Bottom);
+      bottomContainer.autoMatch(.height, to: .height, of: self.view, withMultiplier: 0.5);
+      bottomContainer.autoPinEdge(toSuperviewEdge: .leading);
+      bottomContainer.autoPinEdge(toSuperviewEdge: .trailing);
+      bottomContainer.autoPinEdge(toSuperviewEdge: .bottom);
       
       
-      bottomView.autoSetDimension(.Height, toSize: viewHeights); //heightConstraint3
-      bottomView.autoMatchDimension(.Width, toDimension: .Width, ofView: self.bottomContainer, withMultiplier: 0.9); //widthConstraint3
-      bottomView.autoAlignAxisToSuperviewMarginAxis(.Vertical); //horizontalConstraint3
-      bottomView.autoPinEdgeToSuperviewEdge(.Top, withInset: viewOffset); //verticalConstraint3 - using container view to help
+      bottomView.autoSetDimension(.height, toSize: viewHeights); //heightConstraint3
+      bottomView.autoMatch(.width, to: .width, of: self.bottomContainer, withMultiplier: 0.9); //widthConstraint3
+      bottomView.autoAlignAxis(toSuperviewMarginAxis: .vertical); //horizontalConstraint3
+      bottomView.autoPinEdge(toSuperviewEdge: .top, withInset: viewOffset); //verticalConstraint3 - using container view to help
       
       
-      topRightView.autoSetDimension(.Height, toSize: viewHeights); //heightConstraint
-      topRightView.autoMatchDimension(.Width, toDimension: .Width, ofView: self.view, withMultiplier: 0.4); //widthConstraint
-      topRightView.autoConstrainAttribute(.Right, toAttribute: .Right, ofView: self.bottomView); //horizontalConstraint
-      topRightView.autoPinEdge(.Bottom, toEdge: .Top, ofView: self.bottomContainer, withOffset: -viewOffset); //verticalConstraint
+      topRightView.autoSetDimension(.height, toSize: viewHeights); //heightConstraint
+      topRightView.autoMatch(.width, to: .width, of: self.view, withMultiplier: 0.4); //widthConstraint
+      topRightView.autoConstrainAttribute(.right, to: .right, of: self.bottomView); //horizontalConstraint
+      topRightView.autoPinEdge(.bottom, to: .top, of: self.bottomContainer, withOffset: -viewOffset); //verticalConstraint
       
       
-      topLeftView.autoSetDimension(.Height, toSize: viewHeights); //heightConstraint2
-      topLeftView.autoMatchDimension(.Width, toDimension: .Width, ofView: self.view, withMultiplier: 0.4); //widthConstraint2
-      topLeftView.autoConstrainAttribute(.Left, toAttribute: .Left, ofView: self.bottomView); //horizontalConstraint2
-      topLeftView.autoPinEdge(.Bottom, toEdge: .Top, ofView: self.bottomContainer, withOffset: -viewOffset); //verticalConstraint2
+      topLeftView.autoSetDimension(.height, toSize: viewHeights); //heightConstraint2
+      topLeftView.autoMatch(.width, to: .width, of: self.view, withMultiplier: 0.4); //widthConstraint2
+      topLeftView.autoConstrainAttribute(.left, to: .left, of: self.bottomView); //horizontalConstraint2
+      topLeftView.autoPinEdge(.bottom, to: .top, of: self.bottomContainer, withOffset: -viewOffset); //verticalConstraint2
       
       didSetupConstraints = true;
     }
